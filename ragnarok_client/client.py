@@ -4,7 +4,7 @@ from cryptography.hazmat.primitives.asymmetric import dh
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 import json
 
-class client_socket:
+class ClientSocket:
 	""" Generator for Client sided sockets with DH encryption """
 	def __init__(self, debug_flag):
 		self.__dh = DiffieHellman.DH()
@@ -30,13 +30,13 @@ class client_socket:
 
 		# Generator for public secret
 		calculated_public_secret = str(self.__dh.calculate_public_secret())
-		secon_step = "{"
-		secon_step += "\"dh_key_exchange\":"
-		secon_step += "{"
-		secon_step += "\"step\": {},".format(2)
-		secon_step += "\"public_secret\": {}".format(calculated_public_secret)
-		secon_step += "}}"
-		socket.send(secon_step.encode())
+		second_step = "{"
+		second_step += "\"dh_key_exchange\":"
+		second_step += "{"
+		second_step += "\"step\": {},".format(2)
+		second_step += "\"public_secret\": {}".format(calculated_public_secret)
+		second_step += "}}"
+		socket.send(second_step.encode())
 
 		# Calculation of shared public secret
 		self.__dh.calculate_shared_secret(public_secret)
