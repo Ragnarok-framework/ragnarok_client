@@ -1,6 +1,6 @@
 import psutil
 def ProcessChecker(processName):
-    ''' Checks whether a specified process is running '''
+    ''' Analysis of a specified process that is running '''
 
     list = []
     for proc in psutil.process_iter():

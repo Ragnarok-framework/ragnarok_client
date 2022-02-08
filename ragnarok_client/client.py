@@ -55,5 +55,5 @@ class client_socket:
 
 		finally:
 			# Termination of program
-			print("sex")
+			print("TERMINATED")
 			sock.close()

@@ -20,7 +20,7 @@ class Main:
 			print(args)
 			""" Step 2: Getting input for socket data and API definiton """
 		if args.mode.lower() == "client":
-	    	server = "localhost" # input("Server IP: ")
+	    	server = "localhost"
 		    client = Client.ClientSocket(args.debug)
 		    client.start_client(server)
 def run():
