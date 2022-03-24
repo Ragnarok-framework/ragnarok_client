@@ -1,6 +1,6 @@
 import psutil
 def ProcessChecker(processName):
-    ''' Analysis of a specified process that is running '''
+    ''' Analysis of a specified process that is running on all machines '''
 
     list = []
     for proc in psutil.process_iter():
