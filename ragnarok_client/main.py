@@ -23,5 +23,6 @@ class Main:
 	    	server = "localhost"
 		    client = Client.ClientSocket(args.debug)
 		    client.start_client(server)
+			
 def run():
 		Main().main()
